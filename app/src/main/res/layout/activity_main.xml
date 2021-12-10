@@ -79,9 +79,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="60dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/holtwood_one_sc"
         android:text="@string/logo_of_app_1"
-        android:textColor="@color/black"
+        android:textColor="@color/name_of_app"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toTopOf="parent" />
@@ -92,9 +92,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/alfa_slab_one"
         android:text="@string/logo_of_app_2"
-        android:textColor="@color/name_of_app"
+        android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
@@ -113,8 +113,10 @@
         tools:ignore="ImageContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryRecycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
