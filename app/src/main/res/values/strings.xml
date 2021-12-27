@@ -6,4 +6,5 @@
     <string name="main_scene_text">Главная</string>
     <string name="logo_of_app_1">Tickets</string>
     <string name="logo_of_app_2">App</string>
+    <string name="ticket_start_date">Дата:</string>
 </resources>

@@ -7,14 +7,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.hfad.ticket.adapter.CategoryAdapter;
+import com.hfad.ticket.adapter.TicketAdapter;
 import com.hfad.ticket.model.Category;
+import com.hfad.ticket.model.Ticket;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView categoryRecycler;
+    RecyclerView categoryRecycler,ticketRecycler;
     CategoryAdapter categoryAdapter;
+    TicketAdapter ticketAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,20 @@ public class MainActivity extends AppCompatActivity {
 
         setCategoryRecycler(categoryList);
 
+        List<Ticket> ticketList=new ArrayList<>();
+        ticketList.add(new Ticket(1,"sport_1","Соревнования по\nбаскетболу","29 декабря","#00AA72"));
+
+        setTicketRecycler(ticketList);
+    }
+
+    private void setTicketRecycler(List<Ticket> ticketList) {
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+
+        ticketRecycler=findViewById(R.id.ticketRecycler);
+        ticketRecycler.setLayoutManager(layoutManager);
+
+        ticketAdapter=new TicketAdapter(this,ticketList);
+        ticketRecycler.setAdapter(ticketAdapter);
     }
 
     private void setCategoryRecycler(List<Category> categoryList) {
