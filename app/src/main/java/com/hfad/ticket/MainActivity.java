@@ -33,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
         List<Ticket> ticketList=new ArrayList<>();
         ticketList.add(new Ticket(1,"sport_1","Соревнования по\nбаскетболу","29 декабря","#00AA72"));
-
+        ticketList.add(new Ticket(2,"sport_2","Соревнования по\nнастольному теннису","28 декабря","#c6c6c6"));
+        ticketList.add(new Ticket(3,"concert_1","Новогодний\nконцерт","31 декабря","#dc4c38"));
+        ticketList.add(new Ticket(4,"concert_2","Drum\nShow","30 декабря","#81746e"));
+        ticketList.add(new Ticket(5,"movie","Фильм\n","1 января","#939293"));
         setTicketRecycler(ticketList);
     }
 
