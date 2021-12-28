@@ -1,6 +1,7 @@
 package com.hfad.ticket.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hfad.ticket.R;
+import com.hfad.ticket.TicketPage;
 import com.hfad.ticket.model.Ticket;
 
 import java.util.List;
@@ -43,6 +45,22 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.TicketView
         holder.ticketImage.setImageResource(imageId);
         holder.ticketTitle.setText(tickets.get(position).getTitle());
         holder.ticketDate.setText(tickets.get(position).getDate());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context, TicketPage.class);
+
+                intent.putExtra("ticketBg",Color.parseColor(tickets.get(position).getColor()));
+                intent.putExtra("ticketImage",imageId);
+                intent.putExtra("ticketTitle",tickets.get(position).getTitle());
+                intent.putExtra("ticketDate",tickets.get(position).getDate());
+                intent.putExtra("ticketText",tickets.get(position).getText());
+                intent.putExtra("ticketId",tickets.get(position).getId());
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
